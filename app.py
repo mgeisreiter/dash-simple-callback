@@ -22,12 +22,7 @@ githublink = 'https://github.com/mgeisreiter/dash-simple-callback'
 
 ########### Define a function for your callback:
 def my_function(letters):
-    return(letters.upper())
-
-
-def my_function2(str1, alphabet=string.ascii_lowercase):  
-    alphaset = set(alphabet)  
-    return alphaset <= set(str1.lower())  
+    return(letters[::-1])
 
 ########### Initiate the app
 external_stylesheets = ['https://codepen.io/chriddyp/pen/bWLwgP.css']
@@ -58,7 +53,3 @@ app.layout = html.Div(children=[
 def update_output_div(input_value):
     palin=my_function(input_value)
     return f"You've entered '{input_value}', and your output is '{palin}'"
-
-############ Deploy
-if __name__ == '__main__':
-    app.run_server()
