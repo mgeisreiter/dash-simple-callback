@@ -7,8 +7,8 @@ from collections import deque, Counter
 
 ########### Define your variables ######
 
-myheading1='Check if your phrase is a palindrome here!'
-initial_value='never odd or even'
+myheading1='Why are you yelling?'
+initial_value='I dont know'
 longtext='''
         _Suggestions for you:_
         * Kayak
@@ -22,7 +22,7 @@ githublink = 'https://github.com/mgeisreiter/dash-simple-callback'
 
 ########### Define a function for your callback:
 def my_function(letters):
-    return(letters[::-1])
+    return(letters.upper())
 
 
 def my_function2(str1, alphabet=string.ascii_lowercase):  
