@@ -7,21 +7,27 @@ from collections import deque, Counter
 
 ########### Define your variables ######
 
-myheading1='Try out a palindrome here!'
-initial_value='A nut for a jar of tuna'
+myheading1='Check if your phrase is a palindrome here!'
+initial_value='never odd or even'
 longtext='''
-        _Suggestions you might try:_
-        * A man, a plan, a canal: Panama!
-        * Go hang a salami I'm a lasanga hog
-        * God! Nate bit a Tibetan dog!
+        _Suggestions for you:_
+        * Kayak
+        * Mr. Owl ate my metal worm
+        * Was it a car or a cat i saw?
+        * Rats live on no evil star
         '''
-tabtitle = 'racecar'
+tabtitle = 'Palindromes'
 sourceurl = 'https://www.grammarly.com/blog/16-surprisingly-funny-palindromes/'
-githublink = 'https://github.com/austinlasseter/dash-simple-callback'
+githublink = 'https://github.com/mgeisreiter/dash-simple-callback'
 
 ########### Define a function for your callback:
 def my_function(letters):
     return(letters[::-1])
+
+
+def my_function2(str1, alphabet=string.ascii_lowercase):  
+    alphaset = set(alphabet)  
+    return alphaset <= set(str1.lower())  
 
 ########### Initiate the app
 external_stylesheets = ['https://codepen.io/chriddyp/pen/bWLwgP.css']
@@ -50,7 +56,7 @@ app.layout = html.Div(children=[
     [Input(component_id='my-id', component_property='value')]
 )
 def update_output_div(input_value):
-    palin=my_function(input_value)
+    palin=my_function2(input_value)
     return f"You've entered '{input_value}', and your output is '{palin}'"
 
 ############ Deploy
